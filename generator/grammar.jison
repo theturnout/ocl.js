@@ -249,7 +249,25 @@ function functionCallExpression(fn, source) {
         return new Expression.AsSetOperation(source);
     } else if(fn.toLowerCase() === 'oclistypeof') {
         return new Expression.OclIsTypeOfExpression(source);
-    }
+    } else if(fn.toLowerCase() === 'oclisundefined') {
+        return new Expression.OclIsUndefinedExpression(source);
+    } else if(fn.toLowerCase() === 'concat') {
+        return new Expression.ConcatExpression(source);
+    } else if(fn.toLowerCase() === 'toupper') {
+        return new Expression.ToUpperExpression(source);
+    } else if(fn.toLowerCase() === 'tolower') {
+        return new Expression.ToLowerExpression(source);
+    } else if(fn.toLowerCase() === 'substring') {
+        return new Expression.SubstringExpression(source);
+    } else if(fn.toLowerCase() === 'tointeger') {
+        return new Expression.ToIntegerExpression(source);
+    } else if(fn.toLowerCase() === 'toreal') {
+        return new Expression.ToRealExpression(source);
+    } else if(fn.toLowerCase() === 'abs') {
+        return new Expression.AbsExpression(source);
+    } else {
+        return new Expression.NativeJsFunctionCallExpression(source, fn);
+    }    
 
     throw new Error(`No function call expression found for '${fn}' on ${source}!`);
 }
