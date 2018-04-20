@@ -160,6 +160,18 @@ Object.keys(_nilExpression).forEach(function (key) {
   });
 });
 
+var _number = require('./number');
+
+Object.keys(_number).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _number[key];
+    }
+  });
+});
+
 var _oclIsTypeOfExpression = require('./oclIsTypeOfExpression');
 
 Object.keys(_oclIsTypeOfExpression).forEach(function (key) {
@@ -168,6 +180,18 @@ Object.keys(_oclIsTypeOfExpression).forEach(function (key) {
     enumerable: true,
     get: function get() {
       return _oclIsTypeOfExpression[key];
+    }
+  });
+});
+
+var _oclIsUndefined = require('./oclIsUndefined');
+
+Object.keys(_oclIsUndefined).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _oclIsUndefined[key];
     }
   });
 });
@@ -192,6 +216,18 @@ Object.keys(_selectExpression).forEach(function (key) {
     enumerable: true,
     get: function get() {
       return _selectExpression[key];
+    }
+  });
+});
+
+var _string = require('./string');
+
+Object.keys(_string).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _string[key];
     }
   });
 });
